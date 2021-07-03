@@ -5,6 +5,7 @@ import Search from "./Search";
 import { useState } from 'react';
 
 function PlantPage({ plants, setPlants }) {
+  const [searchText, setSearchText] = useState('')
   const [formInput, setFormInput] = useState({
     name: '',
     image: '',
@@ -33,7 +34,7 @@ function PlantPage({ plants, setPlants }) {
     e.target[2].value = ''
   }
 
-  const [searchText, setSearchText] = useState('')
+  
 
   function handleSearchText(e) {
     setSearchText(e.target.value)
@@ -65,9 +66,7 @@ function PlantPage({ plants, setPlants }) {
       handleNewPlantSubmit = {handleNewPlantSubmit}
         />
       <Search 
-        searchText = {searchText}
         setSearchText = {setSearchText}
-        handleSearchText = {handleSearchText}
       />
       <PlantList 
         plants = {plants}

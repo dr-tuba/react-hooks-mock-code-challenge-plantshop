@@ -6,7 +6,7 @@ function PlantList({ plants, searchText, setPlants, handleDeletePlant }) {
     <ul className="cards">
       {
       plants.map(plant => {
-        if (searchText === '')
+        if (plant.name.toLowerCase().startsWith(searchText.toLowerCase()))
         return (
             <PlantCard
               key = {plant.id}
@@ -19,18 +19,6 @@ function PlantList({ plants, searchText, setPlants, handleDeletePlant }) {
               handleDeletePlant = {handleDeletePlant}
             />
             )
-        else if (searchText === plant.name)
-        return (
-          <PlantCard
-            key = {plant.id}
-            id = {plant.id}
-            image = {plant.image}
-            name = {plant.name}
-            price = {plant.price}
-            plants = {plants}
-            handleDeletePlant = {handleDeletePlant}
-          />
-          )
           }
         )
       }
