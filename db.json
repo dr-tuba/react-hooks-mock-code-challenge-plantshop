@@ -34,7 +34,7 @@
       "id": 6,
       "name": "Monstera Deliciosa",
       "image": "./images/monstera.jpg",
-      "price": 25.99
+      "price": "20.45"
     },
     {
       "id": 7,

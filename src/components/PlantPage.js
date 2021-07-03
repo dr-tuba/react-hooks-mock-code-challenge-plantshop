@@ -33,30 +33,7 @@ function PlantPage({ plants, setPlants }) {
     e.target[1].value = ''
     e.target[2].value = ''
   }
-
   
-
-  function handleSearchText(e) {
-    setSearchText(e.target.value)
-  }
-  
-  function handleDeletePlant(e) {
-    fetch(`http://localhost:6001/Plants/${e.target.parentNode.childNodes[1].id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    const newCopyOfPlants = [...plants]
-    for (const plant of newCopyOfPlants) {
-      if (e.target.parentNode.childNodes[1].textContent === plant.name) {
-        var plantIndex = newCopyOfPlants.indexOf(plant)
-      }
-    }
-    newCopyOfPlants.splice(plantIndex, 1)
-    setPlants(newCopyOfPlants)
-  }
-
   return (
     <main>
       <NewPlantForm 
@@ -72,7 +49,6 @@ function PlantPage({ plants, setPlants }) {
         plants = {plants}
         searchText = {searchText}
         setPlants = {setPlants}
-        handleDeletePlant = {handleDeletePlant}
         />
     </main>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants, searchText, setPlants, handleDeletePlant }) {  
+function PlantList({ plants, searchText, setPlants }) {  
   return (
     <ul className="cards">
       {
@@ -16,7 +16,6 @@ function PlantList({ plants, searchText, setPlants, handleDeletePlant }) {
               price = {plant.price}
               plants = {plants}
               setPlants = {setPlants}
-              handleDeletePlant = {handleDeletePlant}
             />
             )
           }
