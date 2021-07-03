@@ -1,7 +1,7 @@
 import React from "react";
 import PlantCard from "./PlantCard";
 
-function PlantList({ plants, searchText, setPlants }) {
+function PlantList({ plants, searchText, setPlants, handleDeletePlant }) {  
   return (
     <ul className="cards">
       {
@@ -16,6 +16,7 @@ function PlantList({ plants, searchText, setPlants }) {
               price = {plant.price}
               plants = {plants}
               setPlants = {setPlants}
+              handleDeletePlant = {handleDeletePlant}
             />
             )
         else if (searchText === plant.name)
@@ -27,6 +28,7 @@ function PlantList({ plants, searchText, setPlants }) {
             name = {plant.name}
             price = {plant.price}
             plants = {plants}
+            handleDeletePlant = {handleDeletePlant}
           />
           )
           }
