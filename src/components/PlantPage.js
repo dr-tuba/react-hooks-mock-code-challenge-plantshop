@@ -46,8 +46,14 @@ function PlantPage({ plants, setPlants }) {
         'Content-Type': 'application/json',
       }
     })
-    const updatedArray = plants.splice(0, e.target.parentNode.childNodes[1].id - 1)
-    setPlants(updatedArray)
+    const newCopyOfPlants = [...plants]
+    for (const plant of newCopyOfPlants) {
+      if (e.target.parentNode.childNodes[1].textContent === plant.name) {
+        var plantIndex = newCopyOfPlants.indexOf(plant)
+      }
+    }
+    newCopyOfPlants.splice(plantIndex, 1)
+    setPlants(newCopyOfPlants)
   }
 
   return (
